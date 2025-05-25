@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>거제 지역 공구실 위치</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px; /* 이미지 크기에 따라 조절 */
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px 20px;
+            box-sizing: border-box;
+            margin-top: 20px;
+            position: relative; /* 텍스트 오버레이 기준 */
+        }
+
+        h1 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .map-area {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .map-area img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .tool-room-label {
+            position: absolute;
+            background-color:  #28a745;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            text-decoration: none;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            transform: translate(-50%, -50%); /* 중앙 정렬 */
+        }
+
+        .tool-room-label:hover {
+            background-color:#218838;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+          .tool-room-label2{
+            position: absolute;
+            background-color:  orangered;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #333;
+            
+            text-decoration: none;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            transform: translate(-50%, -50%); /* 중앙 정렬 */
+        }
+.no-interaction {
+    pointer-events: none; /* 이 요소는 마우스 이벤트에 반응하지 않음 */
+    background-color: lightcoral;
+    color: white;
+  }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>공구실 위치 안내</h1>
+        <div class="map-area">
+            <img src="images/geoje_map_part.png" alt="거제 지역 일부 지도">
+            <a href="tool_room_1.html" class="tool-room-label2 no-interaction" style="top: 30%; left: 20%;">공구실1</a>
+            <a href="#" class="tool-room-label" style="top: 40%; left: 35%;">공구실2</a>
+            <a href="rack_location.html" class="tool-room-label2 no-interaction" style="top: 50%; left: 15%;">공구실3</a>
+            <a href="#" class="tool-room-label2 no-interaction" style="top: 60%; left: 25%;">공구실4</a>
+            <a href="rack_location.html" class="tool-room-label" style="top: 70%; left: 70%;">공구실5</a>
+            <a href="#" class="tool-room-label2 no-interaction" style="top: 50%; left: 50%;">공구실6</a>
+            <a href="rack_location.html" class="tool-room-label" style="top: 80%; left: 30%;">공구실7</a>
+            <a href="#" class="tool-room-label2 no-interaction" style="top: 55%; left: 80%;">공구실8</a>
+            <a href="tool_room_9.html" class="tool-room-label2 no-interaction" style="top: 70%; left: 40%">공구실9</a>
+            <a href="#" class="tool-room-label2 no-interaction" style="top: 90%; left: 55%;">공구실10</a>
+            <a  class="tool-room-label2 no-interaction" style="top: 75%; left: 85%;">공구실11</a>
+        </div>
+        <a href="index.html" style="display: block; margin-top: 20px; text-align: center; text-decoration: none; color: #007bff;">메인으로 돌아가기</a>
+    </div>
+</body>
+</html>

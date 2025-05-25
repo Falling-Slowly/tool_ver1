@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랙 위치 표시</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px 20px;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        .header-samsung {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .header-samsung .samsung-logo-small {
+            width: 80px;
+            height: auto;
+            opacity: 0.8;
+        }
+        .header-samsung .samsung-heavy-industries {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #555;
+        }
+
+
+        h1 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .user-info span {
+            color: #e74c3c;
+        }
+
+        .info-display-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+            width: 90%;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-display-group .display-field {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #f9f9f9;
+            color: #333;
+            min-height: 45px; /* Ensure consistent height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rack-location-box {
+            border: 1px solid #007bff;
+            border-radius: 10px;
+            padding: 30px 20px;
+            margin-top: 30px;
+            background-color: #e0f2ff;
+            color: #0056b3;
+            font-size: 1.8em;
+            font-weight: bold;
+            width: 90%;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+        }
+
+        .rack-location-label {
+            margin-top: 30px;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .samsung-logo {
+            margin-top: 40px;
+            width: 100px;
+            height: auto;
+            opacity: 0.7;
+        }
+img {
+  max-width: 100%; /* 이미지가 부모 요소의 너비를 넘지 않도록 최대 너비를 100%로 설정 */
+  height: auto;    /* 너비가 변경될 때 이미지의 원본 비율을 유지하도록 높이를 자동으로 설정 */
+  display: block;  /* (선택 사항) 이미지를 블록 레벨 요소로 만들어 하단 여백 문제를 해결할 수 있음 */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-samsung">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="SAMSUNG" class="samsung-logo-small">
+            <span class="samsung-heavy-industries">SAMSUNG HEAVY INDUSTRIES</span>
+        </div>
+        <h1>SHI TOOL PLATFORM</h1>
+        <div class="user-info">
+            사번 <span>xxxxxx</span> 이름 xxx 부서 xxx
+        </div>
+
+        <div class="info-display-group">
+            <div class="display-field">공구명</div>
+            <div class="display-field">공구실</div>
+            <div class="display-field">빠루1</div>
+            <div class="display-field">1공구실</div>
+        </div>
+
+        <div class="rack-location-box">
+            2층 G-b-2
+        </div>
+	 <p></p>
+	 <img src="images/2floor.png" alt="랙 위치 표시" >
+  
+	 <a href="index.html" style="display: block; margin-top: 20px; text-align: center; text-decoration: none; color: #007bff;">메인으로 돌아가기</a>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="SAMSUNG" class="samsung-logo" style="display: none;"> </div>
+</body>
+</html>

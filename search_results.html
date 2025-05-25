@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 결과</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px 20px;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .user-info span {
+            color: #e74c3c;
+        }
+
+        .search-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            width: 90%;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-controls .input-field {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+            text-align: left;
+            color: #333;
+        }
+        .search-controls .search-button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .search-controls .search-button:hover, .search-controls .search-button:active {
+            background-color: #0056b3;
+        }
+
+        .button {
+            padding: 18px 20px;
+            margin: 12px auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            width: 90%;
+            max-width: 320px;
+            box-sizing: border-box;
+            display: block;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .button:hover, .button:active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        .button.search-result:hover, .button.search-result:active {
+             background-color: #007bff; /* Blue for search results on hover */
+             color: white;
+        }
+
+        .samsung-logo {
+            margin-top: 40px;
+            width: 100px;
+            height: auto;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SHI TOOL PLATFORM</h1>
+        <div class="user-info">
+            사번 <span>xxxxxx</span> 이름 xxx 부서 xxx
+        </div>
+
+        <div class="search-controls">
+            <span class="input-field">검색 결과</span>
+            <button class="search-button">검색</button>
+        </div>
+
+        <a href="tool_request_confirm.html" class="button search-result">빠루1</a>
+        <a href="tool_request_confirm.html" class="button search-result">빠루2</a>
+        <a href="tool_request_confirm.html" class="button search-result">빠루3</a>
+<a href="index.html" style="display: block; margin-top: 20px; text-align: center; text-decoration: none; color: #007bff;">메인으로 돌아가기</a>
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="SAMSUNG" class="samsung-logo">
+    </div>
+</body>
+</html>

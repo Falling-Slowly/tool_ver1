@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인별 공구 불출 현황</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px; /* Slightly wider for table */
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px 20px;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 90%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .user-info div {
+            flex: 1 1 auto;
+            margin: 5px 10px;
+            text-align: left;
+        }
+        .user-info span {
+            color: #e74c3c;
+            margin-right: 5px;
+        }
+        .user-info input[type="text"] {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 0.9em;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+            margin-left: 5px;
+        }
+        .user-info input[type="text"].small-input {
+            width: 80px; /* Adjust size as needed */
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            font-size: 0.95em;
+        }
+
+        table thead th {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 8px;
+            border: 1px solid #0056b3;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        table tbody td {
+            padding: 10px 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tbody td button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        table tbody td button:hover, table tbody td button:active {
+            background-color: #218838;
+        }
+
+        .samsung-logo {
+            margin-top: 40px;
+            width: 100px;
+            height: auto;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SHI TOOL PLATFORM</h1>
+        <div class="user-info">
+            <div>사번 <span>xxxxxx</span></div>
+            <div>부서명 <input type="text" class="small-input"></div>
+            <div>구분(상세, 요약) <input type="text" class="small-input"></div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>불출일자</th>
+                    <th>공구번호</th>
+                    <th>품명</th>
+                    <th>UID번호</th>
+                    <th>수량</th>
+                    <th></th> </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025.05.01</td>
+                    <td>ZRxxxxxx</td>
+                    <td>HYD 30</td>
+                    <td>12125</td>
+                    <td>1</td>
+                    <td><button>재고조사</button></td>
+                </tr>
+                </tbody>
+        </table>
+	<a href="index.html" style="display: block; margin-top: 20px; text-align: center; text-decoration: none; color: #007bff;">메인으로 돌아가기</a>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="SAMSUNG" class="samsung-logo">
+    </div>
+</body>
+</html>

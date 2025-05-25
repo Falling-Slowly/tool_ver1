@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공구 시스템 로그인</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            overflow: hidden; /* 배경 동영상 스크롤 방지 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5; /* 동영상 로딩 전 배경색 */
+            color: #333; /* 기본 텍스트 색상 */
+        }
+
+        #background-video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            object-fit: cover; /* 동영상이 컨테이너를 꽉 채우도록 */
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.95); /* 투명도 약간 증가 */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* 그림자 강화 */
+            padding: 40px 30px;
+            text-align: center;
+            width: 90%;
+            max-width: 420px; /* 최대 너비 약간 확장 */
+            box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+            display: flex; /* 내부 요소들을 flex로 정렬 */
+            flex-direction: column; /* 세로 방향으로 정렬 */
+            justify-content: space-between; /* 요소들 사이에 공간을 균등하게 배분 */
+        }
+
+        .top-branding {
+            margin-bottom: 30px; /* 폼과 브랜딩 사이 간격 */
+        }
+
+        .main-title {
+            font-size: 2.2em; /* "STM" 크기 더욱 키움 */
+            font-weight: 900; /* Extra bold */
+            color: #004080; /* 삼성 블루 계열 */
+            margin-bottom: 5px;
+            line-height: 1.1;
+        }
+
+        .sub-title {
+            font-size: 1.3em; /* "Samsung Tool Management" 크기 키움 */
+            font-weight: 700; /* Bold */
+            color: #333; /* 더 진한 색으로 강조 */
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .system-name {
+            font-size: 1.0em; /* "삼성중공업 공구 관리 시스템" */
+            font-weight: 400; /* Regular */
+            color: #666; /* 약간 더 밝은 회색 */
+            margin-bottom: 0; /* 아래 간격 제거, 다음 요소와는 container padding으로 조절 */
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 700; /* 레이블 폰트 굵게 */
+            font-size: 0.95em;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 18px; /* 패딩 약간 늘려 입력 필드 크기 키움 */
+            border: 1px solid #ddd;
+            border-radius: 10px; /* 테두리 둥글게 */
+            font-size: 1.05em; /* 입력 텍스트 크기 키움 */
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #007bff; /* 포커스 시 색상 변경 */
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* 포커스 시 그림자 추가 */
+            outline: none; /* 기본 아웃라인 제거 */
+        }
+
+        .login-button {
+            background-color: #007bff; /* 삼성의 파란색 계열 */
+            color: white;
+            padding: 16px 20px; /* 버튼 패딩 키움 */
+            border: none;
+            border-radius: 12px; /* 버튼 테두리 더 둥글게 */
+            font-size: 1.25em; /* 버튼 텍스트 크기 키움 */
+            font-weight: 700; /* 버튼 텍스트 굵게 */
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* 버튼 그림자 추가 */
+            margin-bottom: 30px; /* 버튼 아래 여백 추가 */
+        }
+
+        .login-button:hover {
+            background-color: #0056b3; /* 호버 시 색상 어둡게 */
+            transform: translateY(-2px); /* 약간 위로 떠오르는 효과 */
+        }
+
+        .bottom-logo-section {
+            margin-top: auto; /* 로고 섹션을 하단으로 밀어냄 */
+            padding-top: 20px; /* 상단 여백 */
+            border-top: 1px solid #eee; /* 구분선 추가 */
+        }
+
+        .logo {
+            max-width: 180px; /* 로고 크기 조정 */
+            height: auto;
+            opacity: 0.8; /* 로고 투명도 조절하여 배경에 더 잘 어우러지게 */
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover {
+            opacity: 1; /* 호버 시 투명도 원래대로 */
+        }
+
+        /* 모바일 반응형 디자인 */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+                margin: 15px; /* 작은 화면에서 여백 조정 */
+                border-radius: 10px;
+            }
+            .main-title {
+                font-size: 2em;
+            }
+            .sub-title {
+                font-size: 1.2em;
+            }
+            .system-name {
+                font-size: 0.9em;
+            }
+            .input-group input {
+                padding: 12px 15px;
+                font-size: 1em;
+            }
+            .login-button {
+                padding: 14px 18px;
+                font-size: 1.1em;
+            }
+            .logo {
+                max-width: 150px; /* 작은 화면에서 로고 크기 조정 */
+            }
+            .bottom-logo-section {
+                padding-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="media/login_background.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="login-container">
+        <div class="top-branding">
+            <h1 class="main-title">STM</h1>
+            <h2 class="sub-title">Samsung Tool Management</h2>
+            <p class="system-name">스마트 공구 관리 시스템</p>
+        </div>
+
+        <form action="index.html" method="get">
+            <div class="input-group">
+                <label for="username">이메일</label>
+                <input type="text" id="username" name="username" required placeholder=" Username@samsung.net">
+            </div>
+            <div class="input-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" required placeholder="Password">
+            </div>
+            <button type="submit" class="login-button">로그인</button>
+        </form>
+
+        <div class="bottom-logo-section">
+            <div class="logo-container">
+                <img src="images/samsung_logo.png" alt="삼성중공업 로고" class="logo">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

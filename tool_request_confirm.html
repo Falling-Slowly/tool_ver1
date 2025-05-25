@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신청 여부 확인</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px 20px;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .user-info span {
+            color: #e74c3c;
+        }
+
+        .input-display-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+            width: 90%;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .input-display-group .display-field {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .input-display-group input[type="number"] {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+            text-align: center;
+            width: 100%;
+        }
+
+        .question-text {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 25px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            width: 90%;
+            max-width: 320px;
+            margin: 20px auto;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 18px 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            width: 48%; /* For the two buttons in a group */
+            box-sizing: border-box;
+            display: inline-block; /* Allow them to sit side-by-side */
+            color: #333;
+            text-decoration: none;
+        }
+
+        .button:hover, .button:active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .confirmation-message {
+            margin-top: 40px;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .samsung-logo {
+            margin-top: 40px;
+            width: 100px;
+            height: auto;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SHI TOOL PLATFORM</h1>
+        <div class="user-info">
+            사번 <span>xxxxxx</span> 이름 xxx 부서 xxx
+        </div>
+
+        <div class="input-display-group">
+            <div class="display-field">공구명</div>
+            <div class="display-field">수량</div>
+            <div class="display-field">빠루1</div>
+            <input type="number" value="3" min="1">
+        </div>
+
+        <p class="question-text">신청하시겠습니까?</p>
+
+        <div class="button-group">
+            <a href="tes.html" class="button">확인</a>
+            <a href="index.html" class="button">취소</a>
+        </div>
+
+       
+<a href="index.html" style="display: block; margin-top: 20px; text-align: center; text-decoration: none; color: #007bff;">메인으로 돌아가기</a>
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="SAMSUNG" class="samsung-logo">
+    </div>
+</body>
+</html>

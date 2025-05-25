@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공구 정보 상세</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px 20px;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .user-info span {
+            color: #e74c3c;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            width: 90%;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .input-group input[type="text"] {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        .input-group .search-button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .input-group .search-button:hover, .input-group .search-button:active {
+            background-color: #0056b3;
+        }
+
+        .tool-images {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 10px;
+            margin-bottom: 20px;
+            width: 90%;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .tool-images .small-images {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .tool-images img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #eee;
+            border-radius: 5px;
+        }
+
+        .tool-images .main-image {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+        }
+
+        .tool-details {
+            margin-top: 20px;
+            width: 90%;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-row label {
+            font-weight: bold;
+            color: #555;
+            flex-basis: 30%;
+            text-align: left;
+        }
+
+        .detail-row span, .detail-row input[type="text"] {
+            flex-basis: 65%;
+            text-align: right;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            background-color: #fcfcfc;
+            box-sizing: border-box;
+        }
+        .detail-row input[type="text"] {
+            background-color: white;
+        }
+
+
+        .button {
+            padding: 18px 20px;
+            margin: 12px auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            width: 90%;
+            max-width: 320px;
+            box-sizing: border-box;
+            display: block;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .button:hover, .button:active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .small-button-group {
+            display: flex;
+            gap: 10px;
+            width: 90%;
+            max-width: 320px;
+            margin: 20px auto;
+            justify-content: space-between;
+        }
+        .small-button-group .button {
+            padding: 12px 15px;
+            font-size: 1.1em;
+            width: 48%;
+            margin: 0;
+        }
+
+        .samsung-logo {
+            margin-top: 40px;
+            width: 100px;
+            height: auto;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SHI TOOL PLATFORM</h1>
+        <div class="user-info">
+            사번 <span>xxxxxx</span> 이름 xxx 부서 xxx
+        </div>
+	<div class="input-group">
+            <input type="text" placeholder="대여 공구 정보 조회">
+            <button class="search-button"  id="searchButton">검색</button>
+        </div>
+
+     
+        <div class="tool-images">
+            <div class="small-images">
+                <img src="images/tool3.png" alt="upper">
+                <img src="images/tool2.png" alt="side">
+            </div>
+            <img src="images/tool1.png" alt="front" class="main-image">
+        </div>
+
+        <div class="tool-details">
+            <div class="detail-row">
+                <label>정식명칭</label>
+                <span>빠루1</span>
+            </div>
+            <div class="detail-row">
+                <label>Code</label>
+                <span>XYZ12345</span>
+            </div>
+            <div class="detail-row">
+                <label>사용방법</label>
+                <a href="aa.html" class="button" style="width: 65%; margin: 0; padding: 8px 12px; font-size: 0.9em;">사용방법 및 안전교육</a>
+            </div>
+        </div>
+
+        <div class="small-button-group">
+            <a href="#" class="button">즐겨찾기 등록</a>
+            <a href="tool_request_confirm.html" class="button">대여</a>
+        </div>
+        
+        <a href="map.html" class="button">공구실 운영 현황</a>
+	<a href="index.html" style="display: block; margin-top: 20px; text-align: center; text-decoration: none; color: #007bff;">메인으로 돌아가기</a>
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="SAMSUNG" class="samsung-logo">
+    </div>
+</body>
+</html>
