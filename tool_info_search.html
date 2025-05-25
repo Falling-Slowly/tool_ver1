@@ -133,12 +133,27 @@
             color: #333; /* hover 시 글자색 변화 없도록 유지 */
             border-color: #ddd; /* hover 시 테두리색 변화 없도록 유지 */
         }
+        .main-title {
+            font-size: 2.2em; /* "STM" 크기 더욱 키움 */
+            font-weight: 900; /* Extra bold */
+            color: #004080; /* 삼성 블루 계열 */
+            margin-bottom: 5px;
+            line-height: 1.1;
+        }
+        .system-name {
+            font-size: 1.0em; /* "삼성중공업 공구 관리 시스템" */
+            font-weight: 400; /* Regular */
+            color: #666; /* 약간 더 밝은 회색 */
+            margin-bottom: 0; /* 아래 간격 제거, 다음 요소와는 container padding으로 조절 */
+        }
 
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>SHI TOOL PLATFORM</h1>
+               <h1 class="main-title">STM</h1>
+	<h2 class="system-name">스마트 공구 관리 시스템</h2>
+	<p></p>
         <div class="user-info">
             사번 <span>xxxxxx</span> 이름 xxx 부서 xxx
         </div>

@@ -125,6 +125,21 @@ img {
   height: auto;    /* 너비가 변경될 때 이미지의 원본 비율을 유지하도록 높이를 자동으로 설정 */
   display: block;  /* (선택 사항) 이미지를 블록 레벨 요소로 만들어 하단 여백 문제를 해결할 수 있음 */
 }
+        .main-title {
+            font-size: 2.2em; /* "STM" 크기 더욱 키움 */
+            font-weight: 900; /* Extra bold */
+            color: #004080; /* 삼성 블루 계열 */
+            margin-bottom: 5px;
+            line-height: 1.1;
+        }
+        .system-name {
+            font-size: 1.0em; /* "삼성중공업 공구 관리 시스템" */
+            font-weight: 400; /* Regular */
+            color: #666; /* 약간 더 밝은 회색 */
+            margin-bottom: 0; /* 아래 간격 제거, 다음 요소와는 container padding으로 조절 */
+        }
+
+
     </style>
 </head>
 <body>
@@ -133,7 +148,9 @@ img {
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="SAMSUNG" class="samsung-logo-small">
             <span class="samsung-heavy-industries">SAMSUNG HEAVY INDUSTRIES</span>
         </div>
-        <h1>SHI TOOL PLATFORM</h1>
+                <h1 class="main-title">STM</h1>
+	<h2 class="system-name">스마트 공구 관리 시스템</h2>
+	<p></p>
         <div class="user-info">
             사번 <span>xxxxxx</span> 이름 xxx 부서 xxx
         </div>
