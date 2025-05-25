@@ -70,9 +70,16 @@
             width: 80px; /* Adjust size as needed */
         }
 
+        /* 테이블을 감싸는 div에 스크롤 속성 추가 */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto; /* x축 스크롤바 추가 */
+            -webkit-overflow-scrolling: touch; /* iOS에서 부드러운 스크롤 */
+        }
 
         table {
-            width: 100%;
+            width: 100%; /* 부모 div의 100%를 차지하지만, 내용이 넘치면 스크롤 */
+            min-width: 600px; /* 테이블이 너무 작아지지 않도록 최소 너비 설정, 컬럼 수에 따라 조절 */
             border-collapse: collapse;
             margin-top: 30px;
             font-size: 0.95em;
@@ -129,68 +136,70 @@
             <div>구분(상세, 요약) <input type="text" class="small-input"></div>
         </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>구매일자</th>
-                    <th>공구번호</th>
-                    <th>품명</th>
-                    <th>UID번호</th>
-                    <th>수량</th>
-                    <th></th> </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2025.05.01</td>
-                    <td>ZRxxxxxx</td>
-                    <td>HYD 30</td>
-                    <td>12125</td>
-                    <td>1</td>
-                    <td><button>재고조사</button></td>
-                </tr>
-		<tr>
-                    <td>2025.05.01</td>
-                    <td>ZRxxxxxx</td>
-                    <td>빠루1</td>
-                    <td>12126</td>
-                    <td>1</td>
-                    <td><button>재고조사</button></td>
-                </tr>
-		<tr>
-                    <td>2025.05.01</td>
-                    <td>ZRxxxxxx</td>
-                    <td>빠루2</td>
-                    <td>12127</td>
-                    <td>51</td>
-                    <td><button>재고조사</button></td>
-                </tr>
-		<tr>
-                    <td>2025.05.01</td>
-                    <td>ZRxxxxxx</td>
-                    <td>빠루3</td>
-                    <td>12128</td>
-                    <td>31</td>
-                    <td><button>재고조사</button></td>
-                </tr>
-		<tr>
-                    <td>2025.05.01</td>
-                    <td>ZRxxxxxx</td>
-                    <td>빠루4</td>
-                    <td>12129</td>
-                    <td>112</td>
-                    <td><button>재고조사</button></td>
-                </tr>
-				<tr>
-                    <td>2025.05.01</td>
-                    <td>ZRxxxxxx</td>
-                    <td>빠루5</td>
-                    <td>12130</td>
-                    <td>11</td>
-                    <td><button>재고조사</button></td>
-                </tr>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>구매일자</th>
+                        <th>공구번호</th>
+                        <th>품명</th>
+                        <th>UID번호</th>
+                        <th>수량</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025.05.01</td>
+                        <td>ZRxxxxxx</td>
+                        <td>HYD 30</td>
+                        <td>12125</td>
+                        <td>1</td>
+                        <td><button>재고조사</button></td>
+                    </tr>
+                    <tr>
+                        <td>2025.05.01</td>
+                        <td>ZRxxxxxx</td>
+                        <td>빠루1</td>
+                        <td>12126</td>
+                        <td>1</td>
+                        <td><button>재고조사</button></td>
+                    </tr>
+                    <tr>
+                        <td>2025.05.01</td>
+                        <td>ZRxxxxxx</td>
+                        <td>빠루2</td>
+                        <td>12127</td>
+                        <td>51</td>
+                        <td><button>재고조사</button></td>
+                    </tr>
+                    <tr>
+                        <td>2025.05.01</td>
+                        <td>ZRxxxxxx</td>
+                        <td>빠루3</td>
+                        <td>12128</td>
+                        <td>31</td>
+                        <td><button>재고조사</button></td>
+                    </tr>
+                    <tr>
+                        <td>2025.05.01</td>
+                        <td>ZRxxxxxx</td>
+                        <td>빠루4</td>
+                        <td>12129</td>
+                        <td>112</td>
+                        <td><button>재고조사</button></td>
+                    </tr>
+                    <tr>
+                        <td>2025.05.01</td>
+                        <td>ZRxxxxxx</td>
+                        <td>빠루5</td>
+                        <td>12130</td>
+                        <td>11</td>
+                        <td><button>재고조사</button></td>
+                    </tr>
                 </tbody>
-        </table>
-	<a href="index.html" style="display: block; margin-top: 20px; text-align: center; text-decoration: none; color: #007bff;">메인으로 돌아가기</a>
+            </table>
+        </div> <a href="index.html" style="display: block; margin-top: 20px; text-align: center; text-decoration: none; color: #007bff;">메인으로 돌아가기</a>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="SAMSUNG" class="samsung-logo">
     </div>
 </body>
